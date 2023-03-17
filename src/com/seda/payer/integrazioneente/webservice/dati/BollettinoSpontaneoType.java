@@ -59,6 +59,8 @@ public class BollettinoSpontaneoType  implements java.io.Serializable {
     private java.lang.String codiceTributo;
 
     private java.lang.String tipologiaServizio;
+    
+    private java.lang.String ragioneSociale;
 
     private java.lang.String chiaveSpedizionePagamento;
 
@@ -89,7 +91,8 @@ public class BollettinoSpontaneoType  implements java.io.Serializable {
            java.lang.String codiceTributo,
            java.lang.String tipologiaServizio,
            java.lang.String chiaveSpedizionePagamento,
-           java.lang.String provinciaMese) {
+           java.lang.String provinciaMese,
+           java.lang.String ragioneSociale) {
            this.progressivoCaricamento = progressivoCaricamento;
            this.progressivoSelezione = progressivoSelezione;
            this.numeroCCbeneficiario = numeroCCbeneficiario;
@@ -114,6 +117,7 @@ public class BollettinoSpontaneoType  implements java.io.Serializable {
            this.tipologiaServizio = tipologiaServizio;
            this.chiaveSpedizionePagamento = chiaveSpedizionePagamento;
            this.provinciaMese = provinciaMese;
+           this.ragioneSociale = ragioneSociale;
     }
 
 
@@ -585,7 +589,6 @@ public class BollettinoSpontaneoType  implements java.io.Serializable {
         return provinciaMese;
     }
 
-
     /**
      * Sets the provinciaMese value for this BollettinoSpontaneoType.
      * 
@@ -595,6 +598,23 @@ public class BollettinoSpontaneoType  implements java.io.Serializable {
         this.provinciaMese = provinciaMese;
     }
 
+    /**
+     * Sets the ragioneSociale value for this BollettinoSpontaneoType.
+     * 
+     * @param ragioneSociale
+     */
+    public void setRagioneSociale(java.lang.String ragioneSociale) {
+        this.ragioneSociale = ragioneSociale;
+    }
+    
+    /**
+     * Gets the ragioneSociale value for this BollettinoSpontaneoType.
+     * 
+     * @return ragioneSociale
+     */
+    public java.lang.String getRagioneSociale() {
+        return ragioneSociale;
+    }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
@@ -673,7 +693,10 @@ public class BollettinoSpontaneoType  implements java.io.Serializable {
               this.chiaveSpedizionePagamento.equals(other.getChiaveSpedizionePagamento()))) &&
             ((this.provinciaMese==null && other.getProvinciaMese()==null) || 
              (this.provinciaMese!=null &&
-              this.provinciaMese.equals(other.getProvinciaMese())));
+              this.provinciaMese.equals(other.getProvinciaMese()))) &&
+            ((this.ragioneSociale==null && other.getRagioneSociale()==null) || 
+	          (this.ragioneSociale!=null &&
+	           this.ragioneSociale.equals(other.getRagioneSociale())));
         __equalsCalc = null;
         return _equals;
     }
@@ -750,6 +773,9 @@ public class BollettinoSpontaneoType  implements java.io.Serializable {
         }
         if (getProvinciaMese() != null) {
             _hashCode += getProvinciaMese().hashCode();
+        }
+        if (getRagioneSociale() != null) {
+            _hashCode += getRagioneSociale().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -909,6 +935,12 @@ public class BollettinoSpontaneoType  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("provinciaMese");
         elemField.setXmlName(new javax.xml.namespace.QName("http://dati.webservice.integrazioneente.payer.seda.com", "ProvinciaMese"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ragioneSociale");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://dati.webservice.integrazioneente.payer.seda.com", "RagioneSociale"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
